@@ -320,18 +320,18 @@
 		</prefab_rule>
 
 		<prefab_rule name="downtownGroup">
-			<prefab name="business_red_brick_01"/>
-			<prefab name="business_red_brick_02"/>
-			<prefab name="business_red_brick_03"/>
-			<prefab name="business_red_brick_04"/>
-			<prefab name="business_red_brick_05"/>
-			<prefab name="business_red_brick_06"/>
-			<prefab name="business_red_brick_07"/>
-			<prefab name="business_tan_brick_01"/>
-			<prefab name="business_tan_brick_02"/>
-			<prefab name="business_tan_brick_03"/>
-			<prefab name="business_tan_brick_04"/>
-			<prefab name="business_tan_brick_05"/>
+			<prefab name="business_red_brick_01" prob="0.5"/>
+			<prefab name="business_red_brick_02" prob="0.5"/>
+			<prefab name="business_red_brick_03" prob="0.5"/>
+			<prefab name="business_red_brick_04" prob="0.5"/>
+			<prefab name="business_red_brick_05" prob="0.5"/>
+			<prefab name="business_red_brick_06" prob="0.5"/>
+			<prefab name="business_red_brick_07" prob="0.5"/>
+			<prefab name="business_tan_brick_01" prob="0.5"/>
+			<prefab name="business_tan_brick_02" prob="0.5"/>
+			<prefab name="business_tan_brick_03" prob="0.5"/>
+			<prefab name="business_tan_brick_04" prob="0.5"/>
+			<prefab name="business_tan_brick_05" prob="0.5"/>
 			<prefab name="business_strip_old_01" max_count="1"/>
 			<prefab name="business_strip_old_02" max_count="1"/>
 			<prefab name="courthouse_med_01" max_count="1" />
@@ -345,14 +345,14 @@
 			<prefab name="hotel_ostrich" max_count="1"/>
 			<prefab name="hotel_new_01" max_count="1"/>
 			<prefab name="prison_01" max_count="1"/>
-			<prefab name="parking_lot_01"/>
-			<prefab name="parking_lot_02"/>
-			<prefab name="parking_lot_03"/>
-			<prefab name="parking_garage_01"/>
+			<prefab name="parking_lot_01" prob="0.5"/>
+			<prefab name="parking_lot_02" prob="0.5"/>
+			<prefab name="parking_lot_03" prob="0.5"/>
+			<prefab name="parking_garage_01" prob="0.5"/>
 			<prefab name="theater_01"  max_count="1"/>
 			<prefab name="bar_theater_01"  max_count="1"/>
-			<prefab name="bar_stripclub_01" />
-			<prefab name="bar_sm_01" />
+			<prefab name="bar_stripclub_01" prob="0.5"/>
+			<prefab name="bar_sm_01" prob="0.5"/>
 			<prefab name="fire_station_01" max_count="1"/>
 			<prefab name="fire_station_02" max_count="1"/>
 			<prefab rule="skyscrapers" min_count="2"/>
@@ -360,10 +360,10 @@
 		</prefab_rule>
 
 		<prefab_rule name="skyscrapers">
-			<prefab name="skyscraper_01" max_count="1" prob="50"/>
-			<prefab name="skyscraper_02" max_count="1" prob="50"/>
-			<prefab name="skyscraper_03" max_count="1" prob="50"/>
-			<prefab name="skyscraper_04" max_count="1" prob="50"/>
+			<prefab name="skyscraper_01" max_count="2" prob="50"/>
+			<prefab name="skyscraper_02" max_count="2" prob="50"/>
+			<prefab name="skyscraper_03" max_count="2" prob="50"/>
+			<prefab name="skyscraper_04" max_count="2" prob="50"/>
 		</prefab_rule>
 
 		<prefab_rule name="industrialGroup">
