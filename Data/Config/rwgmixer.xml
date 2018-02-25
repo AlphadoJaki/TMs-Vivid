@@ -58,8 +58,8 @@
 		</hub_rule>
 		<hub_rule name="ruralSmall">
 			<hub_type value="rural"/>
-			<width value="168, 250" />
-			<height value="168, 250" />
+			<width value="168, 300" />
+			<height value="168, 300" />
 			<path_material value="asphalt" />
 			<path_radius value="10" />
 
@@ -78,8 +78,8 @@
 
 		<hub_rule name="ruralLarge">
 			<hub_type value="rural"/>
-			<width value="250, 300" />
-			<height value="250, 300" />
+			<width value="300, 500" />
+			<height value="300, 500" />
 			<path_material value="asphalt" />
 			<path_radius value="10" />
 
@@ -98,8 +98,8 @@
 
 		<hub_rule name="townSmall">
 			<hub_type value="town"/>
-			<width value="300, 400" />
-			<height value="300, 400" />
+			<width value="500, 800" />
+			<height value="500, 800" />
 			<path_material value="asphalt" />
 			<path_radius value="10" />
 
@@ -118,8 +118,8 @@
 
 		<hub_rule name="townLarge">
 			<hub_type value="town"/>
-			<width value="400, 600" />
-			<height value="400, 600" />
+			<width value="800, 1000" />
+			<height value="800, 1000" />
 			<path_material value="asphalt" />
 			<path_radius value="10" />
 
@@ -138,8 +138,8 @@
 
 		<hub_rule name="citySmall">
 			<hub_type value="city"/>
-			<width value="600, 800" />
-			<height value="600, 800" />
+			<width value="1000, 1400" />
+			<height value="1000, 1400" />
 			<path_material value="asphalt" />
 			<path_radius value="10" />
 
@@ -158,8 +158,8 @@
 
 		<hub_rule name="cityLarge">
 			<hub_type value="city"/>
-			<width value="800, 1200" />
-			<height value="800, 1200" />
+			<width value="1400, 1700" />
+			<height value="1400, 1700" />
 			<path_material value="asphalt" />
 			<path_radius value="10" />
 			<downtown_zone_size_perc value="0.45"/>
