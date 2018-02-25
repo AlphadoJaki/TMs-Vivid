@@ -15,6 +15,12 @@
 			<path_material value="asphalt" />
 			<path_radius value="10" />
 
+			<hub_rule name="townSmall" prob="0.3"/>
+			<hub_rule name="townLarge" prob="0.3"/>
+			<hub_rule name="citySmall" prob="0.1"/>
+			<hub_rule name="cityLarge" prob="0.1"/>
+			<hub_rule name="rural" prob="0.3"/>
+			<!--<hub_rule name="empty" prob="1"/>-->
 
 			<wilderness_rule name="wildernessDefault"/>
 		</cell_rule>
@@ -31,6 +37,145 @@
 	</cell_rules>
 
 	<hub_rules>
+		<hub_rule name="empty">
+			<hub_type value="rural"/>
+			<width value="250, 250" />
+			<height value="250, 250" />
+			<path_material value="asphalt" />
+			<path_radius value="10" />
+
+			<prefab_rule name="default"/>
+
+			<street_gen level="10" length_multiplier="4">
+				<axiom value="+"/>
+
+				<rule char="T" replace_with="+"/>
+				<rule char="I" replace_with="+"/>
+				<rule char="N" replace_with="+"/>
+				<rule char="K" replace_with="+"/>
+				<alt_commands chars="T,I,N,K"/>
+			</street_gen>
+		</hub_rule>
+		<hub_rule name="ruralSmall">
+			<hub_type value="rural"/>
+			<width value="168, 250" />
+			<height value="168, 250" />
+			<path_material value="asphalt" />
+			<path_radius value="10" />
+
+			<prefab_rule name="default"/>
+
+			<street_gen level="10" length_multiplier="4">
+				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
+
+				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="I" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="N" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="K" replace_with="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN]"/>
+				<alt_commands chars="T,I,N,K"/>
+			</street_gen>
+		</hub_rule>
+
+		<hub_rule name="ruralLarge">
+			<hub_type value="rural"/>
+			<width value="250, 300" />
+			<height value="250, 300" />
+			<path_material value="asphalt" />
+			<path_radius value="10" />
+
+			<prefab_rule name="default"/>
+
+			<street_gen level="15" length_multiplier="4">
+				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
+
+				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="I" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="N" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="K" replace_with="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN]"/>
+				<alt_commands chars="T,I,N,K"/>
+			</street_gen>
+		</hub_rule>
+
+		<hub_rule name="townSmall">
+			<hub_type value="town"/>
+			<width value="300, 400" />
+			<height value="300, 400" />
+			<path_material value="asphalt" />
+			<path_radius value="10" />
+
+			<prefab_rule name="default"/>
+
+			<street_gen level="15" length_multiplier="4">
+				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
+
+				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="I" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="N" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="K" replace_with="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN]"/>
+				<alt_commands chars="T,I,N,K"/>
+			</street_gen>
+		</hub_rule>
+
+		<hub_rule name="townLarge">
+			<hub_type value="town"/>
+			<width value="400, 600" />
+			<height value="400, 600" />
+			<path_material value="asphalt" />
+			<path_radius value="10" />
+
+			<prefab_rule name="default"/>
+
+			<street_gen level="20" length_multiplier="4">
+				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
+
+				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="I" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="N" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="K" replace_with="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN]"/>
+				<alt_commands chars="T,I,N,K"/>
+			</street_gen>
+		</hub_rule>
+
+		<hub_rule name="citySmall">
+			<hub_type value="city"/>
+			<width value="600, 800" />
+			<height value="600, 800" />
+			<path_material value="asphalt" />
+			<path_radius value="10" />
+
+			<prefab_rule name="default"/>
+
+			<street_gen level="20" length_multiplier="4">
+				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
+
+				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="I" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="N" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="K" replace_with="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN]"/>
+				<alt_commands chars="T,I,N,K"/>
+			</street_gen>
+		</hub_rule>
+
+		<hub_rule name="cityLarge">
+			<hub_type value="city"/>
+			<width value="800, 1200" />
+			<height value="800, 1200" />
+			<path_material value="asphalt" />
+			<path_radius value="10" />
+			<downtown_zone_size_perc value="0.45"/>
+
+			<prefab_rule name="default"/>
+
+			<street_gen level="25" length_multiplier="4">
+				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
+
+				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="I" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="N" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
+				<rule char="K" replace_with="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN]"/>
+				<alt_commands chars="T,I,N,K"/>
+			</street_gen>
+		</hub_rule>
 
 		<hub_rule name="customHubTest">
 			<hub_type value="town"/>
