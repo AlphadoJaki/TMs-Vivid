@@ -15,11 +15,12 @@
 			<path_material value="asphalt" />
 			<path_radius value="10" />
 
-			<hub_rule name="townSmall" prob="0.3"/>
-			<hub_rule name="townLarge" prob="0.3"/>
+			<hub_rule name="townSmall" prob="0.1"/>
+			<hub_rule name="townLarge" prob="3"/>
 			<hub_rule name="citySmall" prob="0.1"/>
-			<hub_rule name="cityLarge" prob="0.1"/>
-			<hub_rule name="rural" prob="0.3"/>
+			<hub_rule name="cityLarge" prob="1"/>
+			<hub_rule name="ruralSmall" prob="0.1"/>
+			<hub_rule name="ruralLarge" prob="1.5"/>
 			<!--<hub_rule name="empty" prob="1"/>-->
 
 			<wilderness_rule name="wildernessDefault"/>
