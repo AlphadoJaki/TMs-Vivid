@@ -65,7 +65,7 @@
 
 			<prefab_rule name="default"/>
 
-			<street_gen level="10" length_multiplier="4">
+			<street_gen level="4" length_multiplier="4">
 				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
 
 				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
@@ -85,7 +85,7 @@
 
 			<prefab_rule name="default"/>
 
-			<street_gen level="15" length_multiplier="4">
+			<street_gen level="4" length_multiplier="4">
 				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
 
 				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
@@ -105,7 +105,7 @@
 
 			<prefab_rule name="default"/>
 
-			<street_gen level="15" length_multiplier="4">
+			<street_gen level="7" length_multiplier="4">
 				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
 
 				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
@@ -125,7 +125,7 @@
 
 			<prefab_rule name="default"/>
 
-			<street_gen level="20" length_multiplier="4">
+			<street_gen level="7" length_multiplier="4">
 				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
 
 				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
@@ -142,10 +142,11 @@
 			<height value="600, 800" />
 			<path_material value="asphalt" />
 			<path_radius value="10" />
+			<downtown_zone_size_perc value="0.45"/>
 
 			<prefab_rule name="default"/>
 
-			<street_gen level="20" length_multiplier="4">
+			<street_gen level="10" length_multiplier="4">
 				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
 
 				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
@@ -162,11 +163,11 @@
 			<height value="800, 1200" />
 			<path_material value="asphalt" />
 			<path_radius value="10" />
-			<downtown_zone_size_perc value="0.45"/>
+			<downtown_zone_size_perc value="0.70"/>
 
 			<prefab_rule name="default"/>
 
-			<street_gen level="25" length_multiplier="4">
+			<street_gen level="10" length_multiplier="4">
 				<axiom value="[FFCT][-FFT][+FFI][--FFN][+FFT][-FFI][++FN][F-FF+FF[-T]FF+FF+FFFF-FF-FF[+I]FF-F[+N]"/>
 
 				<rule char="T" replace_with="F-FF+FF[-T**]FF+FF+FFFF-FF-FF[+I**]FF-F[+N*K]"/>
