@@ -724,8 +724,8 @@
 				<property name="sourceModule1" value="worldMixed"/>
 				<property name="sourceModule2" value="stingMountainLanded"/>
 				<property name="controlModule" value="continentMinusRiver"/>
-				<property name="bounds" value="0.15,100"/>
-				<property name="edgeFalloff" value="0.15"/>
+				<property name="bounds" value="0.2,100"/>
+				<property name="edgeFalloff" value="0.2"/>
 			</module>
 
 
