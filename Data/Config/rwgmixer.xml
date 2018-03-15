@@ -573,7 +573,7 @@
 	<terrain_generators>
 		<terrain_generator name="vanilla" use_old_final="false">
 			<module name="landSmoothBase" type="FastNoise" seed_additive="0">
-				<property name="frequency" value="0.75"/>
+				<property name="frequency" value="0.3"/>
 				<property name="octaveCount" value="5"/>
 			</module>
 			<module name="landSmoothClamped" type="ClampOutput">
@@ -604,7 +604,7 @@
 			</module>
 			<module name="landRoughScaled" type="ScaleOutput">
 				<property name="sourceModule" value="landRough"/>
-				<property name="scale" value="0.1"/>
+				<property name="scale" value="0.05"/>
 			</module>
 			<module name="landJiggled" type="Add">
 				<property name="sourceModule1" value="landSmoothScaled"/>
