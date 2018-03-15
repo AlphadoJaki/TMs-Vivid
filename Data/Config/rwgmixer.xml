@@ -652,7 +652,7 @@
 				<property name="sourceModule" value="stingMountain"/>
 				<property name="scale" value="0.33"/>
 				<property name="bias" value="0.66"/>
-			</module>
+			</module><!--	These affect how edgy mountain is generated. scale+bias=1.0 Edit scale larger, more edgy mountain is generated. (scale, bias) = (0.5, 0.5) or (0.75, 0.25) is good example of edgy one.-->
 			<module name="stingMountainIntensed" type="Multiply">
 				<property name="sourceModule1" value="stingMountain"/>
 				<property name="sourceModule2" value="stingIntense"/>
@@ -661,7 +661,7 @@
 			<module name="stingMountainScaled" type="ScaleOutput">
 				<property name="sourceModule" value="stingMountainIntensed"/>
 				<property name="scale" value="2"/>
-			</module>
+			</module><!--	This affects the height of mountains. If you wanna make them higher, edit into larger number, such as 2.5 or 3.0.-->
 
 			<module name="riverScaled" type="Constant">
 				<property name="constant" value="-0.15"/>
