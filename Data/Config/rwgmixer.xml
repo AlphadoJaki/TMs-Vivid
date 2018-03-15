@@ -573,7 +573,7 @@
 	<terrain_generators>
 		<terrain_generator name="vanilla" use_old_final="false">
 			<module name="landSmoothBase" type="FastNoise" seed_additive="0">
-				<property name="frequency" value="0.75"/>
+				<property name="frequency" value="0.3"/>
 				<property name="octaveCount" value="5"/>
 			</module>
 			<module name="landSmoothClamped" type="ClampOutput">
@@ -604,7 +604,7 @@
 			</module>
 			<module name="landRoughScaled" type="ScaleOutput">
 				<property name="sourceModule" value="landRough"/>
-				<property name="scale" value="0.1"/>
+				<property name="scale" value="0.05"/>
 			</module>
 			<module name="landJiggled" type="Add">
 				<property name="sourceModule1" value="landSmoothScaled"/>
@@ -708,7 +708,7 @@
 				<property name="edgeFalloff" value="0.2"/>
 			</module>-->
 			<module name="continentMinusRiver" type="Select">
-				<property name="sourceModule1" value="stingMountainIntensed"/>
+				<property name="sourceModule1" value="stingMountainScaled"/>
 				<property name="sourceModule2" value="continent0"/>
 				<property name="controlModule" value="plusWorldController"/>
 				<property name="bounds" value="-100,0.2"/>
@@ -723,8 +723,8 @@
 				<property name="sourceModule1" value="worldMixed"/>
 				<property name="sourceModule2" value="stingMountainLanded"/>
 				<property name="controlModule" value="continentMinusRiver"/>
-				<property name="bounds" value="0.2,100"/>
-				<property name="edgeFalloff" value="0.2"/>
+				<property name="bounds" value="0.25,100"/>
+				<property name="edgeFalloff" value="0.25"/>
 			</module>
 
 
