@@ -708,7 +708,7 @@
 				<property name="edgeFalloff" value="0.2"/>
 			</module>-->
 			<module name="continentMinusRiver" type="Select">
-				<property name="sourceModule1" value="stingMountainIntensed"/>
+				<property name="sourceModule1" value="stingMountainScaled"/>
 				<property name="sourceModule2" value="continent0"/>
 				<property name="controlModule" value="plusWorldController"/>
 				<property name="bounds" value="-100,0.2"/>
@@ -723,8 +723,8 @@
 				<property name="sourceModule1" value="worldMixed"/>
 				<property name="sourceModule2" value="stingMountainLanded"/>
 				<property name="controlModule" value="continentMinusRiver"/>
-				<property name="bounds" value="0.2,100"/>
-				<property name="edgeFalloff" value="0.2"/>
+				<property name="bounds" value="0.25,100"/>
+				<property name="edgeFalloff" value="0.25"/>
 			</module>
 
 
