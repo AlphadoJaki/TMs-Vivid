@@ -1,0 +1,174 @@
+<configs>
+<set xpath="/*/terrain_generators">
+	<terrain_generator name="vanilla" base_height="32" water_level="41">
+		<module name="landSmoothBase" type="FastNoise" seed_additive="0">
+			<property name="frequency" value="0.3"/>
+			<property name="octaveCount" value="5"/>
+		</module>
+		<module name="landSmoothClamped" type="ClampOutput">
+			<property name="sourceModule" value="landSmoothBase"/>
+			<property name="bounds" value="-1,1"/>
+		</module>
+		<module name="landSmoothScaled" type="ScaleBiasOutput">
+			<property name="sourceModule" value="landSmoothClamped"/>
+			<property name="scale" value="0.05"/>
+			<property name="bias" value="0.27"/>
+		</module>
+
+		<module name="landJiggleBase" type="FastNoise" seed_additive="10">
+			<property name="frequency" value="1.2"/>
+		</module>
+		<module name="landJiggleController" type="ScaleBiasOutput">
+			<property name="sourceModule" value="landJiggleBase"/>
+			<property name="scale" value="0.4"/>
+			<property name="bias" value="0.5"/>
+		</module>
+		<module name="landRoughBase" type="FastBillow" seed_additive="5">
+			<property name="frequency" value="0.6"/>
+			<property name="octaveCount" value="3"/>
+		</module>
+		<module name="landRough" type="Multiply">
+			<property name="sourceModule1" value="landJiggleController"/>
+			<property name="sourceModule2" value="landRoughBase"/>
+		</module>
+		<module name="landRoughScaled" type="ScaleOutput">
+			<property name="sourceModule" value="landRough"/>
+			<property name="scale" value="0.05"/>
+		</module>
+		<module name="landJiggled" type="Add">
+			<property name="sourceModule1" value="landSmoothScaled"/>
+			<property name="sourceModule2" value="landRoughScaled"/>
+		</module>
+		<!--<module name="landSmoothScaled" type="Constant">
+			<property name="constant" value="0.2"/>
+		</module>-->
+
+<!--**********************************************************
+						Stinging Mountain
+		This sub-generator make mountains with sharp ridges.
+		And each of them are at distant with the others.
+		Elevation is regularized into 0,1 bound.
+	**********************************************************-->
+		<module name="sting" type="FastRidgedMultifractal" seed_additive="1">
+			<property name="frequency" value="0.5"/>
+		</module>
+		<module name="stingScaled" type="ScaleBiasOutput">
+			<property name="sourceModule" value="sting"/>
+			<property name="scale" value="0.5"/>
+			<property name="bias" value="0.37"/>
+		</module>
+		<module name="stingClamped" type="ClampOutput">
+			<property name="sourceModule" value="stingScaled"/>
+			<property name="bounds" value="0,1"/>
+		</module>
+		<module name="stingRidge" type="FastRidgedMultifractal" seed_additive="20">
+			<property name="frequency" value="1"/>
+		</module>
+		<module name="stingRidgeScaled" type="ScaleBiasOutput">
+			<property name="sourceModule" value="stingRidge"/>
+			<property name="scale" value="0.5"/>
+			<property name="bias" value="0.37"/>
+		</module>
+		<module name="stingRidgeClamped" type="ClampOutput">
+			<property name="sourceModule" value="stingRidgeScaled"/>
+			<property name="bounds" value="0,1"/>
+		</module>
+		<module name="stingMountain" type="Multiply">
+			<property name="sourceModule1" value="stingClamped"/>
+			<property name="sourceModule2" value="stingRidgeClamped"/>
+		</module>
+		<module name="stingIntense" type="ScaleBiasOutput">
+			<property name="sourceModule" value="stingMountain"/>
+			<property name="scale" value="0.33"/>
+			<property name="bias" value="0.66"/>
+		</module><!--	These affect how edgy mountain is generated. scale+bias=1.0 Edit scale larger, more edgy mountain is generated. (scale, bias) = (0.5, 0.5) or (0.75, 0.25) is good example of edgy one.-->
+		<module name="stingMountainIntensed" type="Multiply">
+			<property name="sourceModule1" value="stingMountain"/>
+			<property name="sourceModule2" value="stingIntense"/>
+		</module>
+
+		<module name="stingMountainScaled" type="ScaleOutput">
+			<property name="sourceModule" value="stingMountainIntensed"/>
+			<property name="scale" value="2"/>
+		</module><!--	This affects the height of mountains. If you wanna make them higher, edit into larger number, such as 2.5 or 3.0.-->
+
+		<module name="riverScaled" type="Constant">
+			<property name="constant" value="-0.15"/>
+		</module>
+
+		<module name="worldController" type="FastNoise" seed_additive="2">
+			<property name="frequency" value="0.2"/><!--	This affects the count of rivers. If you wanna make them more, edit into larger number, such as 0.29 or 0.32.-->
+			<property name="octaveCount" value="3"/>
+		</module>
+		<module name="invertedWorldController" type="InvertOutput">
+			<property name="sourceModule" value="worldController"/>
+		</module>
+		<module name="plusWorldController" type="Select">
+			<property name="controlModule" value="worldController"/>
+			<property name="sourceModule1" value="invertedWorldController"/>
+			<property name="sourceModule2" value="worldController"/>
+			<property name="bounds" value="0,100"/>
+		</module>
+		<module name="worldMixed" type="Select">
+			<property name="controlModule" value="plusWorldController"/>
+			<property name="sourceModule1" value="landJiggled"/>
+			<property name="sourceModule2" value="riverScaled"/>
+			<property name="bounds" value="-100,0.06"/><!--	This affects the width of rivers. If you wanna make them wider, edit into larger number, such as 0.1 or 0.12.-->
+			<property name="edgeFalloff" value="0.1"/><!--	This affects the smoothness of difference between land & river. Larger number will make them more smoothier change. -->
+		</module>
+
+
+		<module name="continent0" type="Constant">
+			<property name="constant" value="0"/>
+		</module>
+		<!--<module name="continent1" type="FastNoise" seed_additive="3">
+			<property name="frequency" value="1.5"/>
+			<property name="octaveCount" value="1"/>
+		</module>
+		<module name="continent2" type="FastNoise" seed_additive="4">
+			<property name="frequency" value="1.3"/>
+			<property name="octaveCount" value="1"/>
+		</module>
+		<module name="continent3" type="Select">
+			<property name="sourceModule1" value="continent0"/>
+			<property name="sourceModule2" value="continent1"/>
+			<property name="controlModule" value="continent2"/>
+			<property name="bounds" value="0.3,100"/>
+			<property name="edgeFalloff" value="0.2"/>
+		</module>-->
+		<module name="continentMinusRiver" type="Select">
+			<property name="sourceModule1" value="stingMountainScaled"/>
+			<property name="sourceModule2" value="continent0"/>
+			<property name="controlModule" value="plusWorldController"/>
+			<property name="bounds" value="-100,0.2"/>
+			<property name="edgeFalloff" value="0.2"/>
+		</module>
+
+		<module name="stingMountainLanded" type="Add">
+			<property name="sourceModule1" value="worldMixed"/>
+			<property name="sourceModule2" value="stingMountainScaled"/>
+		</module>
+		<module name="worldOutput" type="Select">
+			<property name="sourceModule1" value="worldMixed"/>
+			<property name="sourceModule2" value="stingMountainLanded"/>
+			<property name="controlModule" value="continentMinusRiver"/>
+			<property name="bounds" value="0.25,100"/>
+			<property name="edgeFalloff" value="0.25"/>
+		</module>
+
+
+		<module name="A16toA17" type="ScaleInput">
+			<property name="sourceModule" value="stingMountainLanded"/>
+			<property name="x" value="0.001953125"/>
+			<property name="z" value="0.001953125"/>
+		</module>
+		<module name="scaleBiasOutput" type="ScaleBiasOutput">
+			<property name="sourceModule" value="A16toA17"/>
+			<property name="scale" value="100"/>
+			<property name="bias" value="9"/>
+		</module>
+
+		<output module="scaleBiasOutput"/>
+	</terrain_generator>
+</set>
+</configs>
