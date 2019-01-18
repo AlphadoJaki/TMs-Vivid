@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xml>
 	<ModInfo>
-		<Name value="Terrain Modifiers - Vivid" />
-		<Description value="" />
+		<Name value="TMs Standalone - Vivid" />
+		<Description value="Standalone modifier setup. No compatibility with Infinite project." />
 		<Author value="Alphado-Jaki" />
 		<Version value="1.1.0" />
 	</ModInfo>
